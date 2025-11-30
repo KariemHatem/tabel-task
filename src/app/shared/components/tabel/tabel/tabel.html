@@ -1,0 +1,69 @@
+<div class="container mx-auto p-4 my-4">
+  <div class="card">
+    <!-- Header Section -->
+    <div class="mb-1 mt-2 d-flex justify-content-between align-items-center p-3">
+      <h2>{{ 'regions' | translate }}</h2>
+      <button class="btn border-0 text-white border btn-color" pButton (click)="openDialog()">
+        {{ 'region-btn' | translate }}
+      </button>
+    </div>
+    <!-- Start Tabel -->
+    <p-table ngSkipHydration [value]="pagedRegions" [tableStyle]="{ width: '100%' }">
+      <!-- Tabel Head -->
+      <ng-template #header>
+        <tr>
+          <th style="width: 25%">{{ 'title' | translate }}</th>
+        </tr>
+      </ng-template>
+      <!-- Tabel Body -->
+      <ng-template #body let-regions>
+        <tr>
+          <!-- Tabel Data -->
+          <td>{{ regions.title }}</td>
+          <td>
+            <!-- Actions -->
+            <div class="action-icons d-flex align-items-center justify-content-end gap-3">
+              <div class="edit">
+                <button class="border-0 bg-white">
+                  <i class="fa-solid fa-pencil me-2 text-black-50"></i>Edit
+                </button>
+              </div>
+              <div class="delet">
+                <button class="border-0 bg-white" (click)="confirmDelete(regions)">
+                  <i class="fa-solid fa-trash me-2 text-black-50"></i>Delete
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <!-- Tabel Foot -->
+    <div class="foot d-flex justify-content-between align-items-center p-3">
+      <!-- left Side  -->
+      <div>
+        <p-select
+          [options]="entries"
+          placeholder="{{ 'show-entries' | translate }}"
+          [(ngModel)]="selectedEntry"
+          (ngModelChange)="onEntriesChanges()"
+        />
+      </div>
+      <!-- Right Side  -->
+      <div class="d-flex align-items-center">
+        <div class="d-flex gap-2">
+          <button class="btn btn-foot text-black-50" (click)="previousPage()">
+            <i class="fa-solid fa-arrow-left text-black-50"></i>
+            {{ 'previous' | translate }}
+          </button>
+          <span class="mx-2 fs-5 fw-bold">{{ currentPage }}</span>
+          <button class="btn btn-foot text-black-50" (click)="nextPage()">
+            {{ 'next' | translate }}
+            <i class="fa-solid fa-arrow-right text-black-50"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p-confirmDialog></p-confirmDialog>

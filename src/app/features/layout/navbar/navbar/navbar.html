@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+
+    <div class="navbar-collapse">
+      <!-- Language Dropdown -->
+      <div class="dropdown">
+        <button
+          class="btn btn-light dropdown-toggle d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ 'language' | translate }}
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <button class="dropdown-item" (click)="changeLang('en')">
+              {{ 'english' | translate }}
+            </button>
+          </li>
+
+          <li>
+            <button class="dropdown-item" (click)="changeLang('ar')">
+              {{ 'arabic' | translate }}
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

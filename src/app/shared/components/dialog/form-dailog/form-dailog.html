@@ -1,0 +1,17 @@
+<div class="content">
+  <h3>{{ 'add-region' | translate }}</h3>
+  <div class="fields d-flex flex-column justify-content-center">
+    <label>{{ 'title-ar' | translate }}</label>
+    <input pInputText type="text" />
+  </div>
+
+  <div class="fields d-flex flex-column justify-content-center my-3">
+    <label>{{ 'title-en' | translate }}</label>
+    <input pInputText type="text" [(ngModel)]="titleEn" />
+  </div>
+
+  <div class="d-flex justify-content-end gap-2 mt-3">
+    <button pButton class="" (click)="cancel()">{{ 'cancel' | translate }}</button>
+    <button pButton class="" (click)="submit()">{{ 'add-region' | translate }}</button>
+  </div>
+</div>

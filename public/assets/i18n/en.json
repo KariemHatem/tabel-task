@@ -1,0 +1,15 @@
+{
+  "language": "Lang",
+  "english": "EN",
+  "arabic": "AR",
+  "regions": "Regions",
+  "region-btn": "Add New Region",
+  "title": "Title",
+  "title-ar": "Title Ar",
+  "title-en": "Title En",
+  "add-region": "Add Region",
+  "cancel": "Cancel",
+  "show-entries": "Show Entries",
+  "previous": "Previous",
+  "next": "Next"
+}
