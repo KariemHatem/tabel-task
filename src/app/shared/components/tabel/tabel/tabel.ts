@@ -45,8 +45,9 @@ export class Tabel {
   currentPage: number = 1;
 
   // Open Dialog Function
-  openDialog() {
+  openDialog(region?: Region) {
     this.ref = this.dialodService.open(FormDailog, {
+      data: { region },
       width: '60vw',
       height: '100vh',
       modal: true,
@@ -56,8 +57,14 @@ export class Tabel {
     }) as DynamicDialogRef<FormDailog>;
     this.ref.onClose.subscribe((res) => {
       if (res?.sucess) {
-        this.manageRegions.addRegion(res.newRegion);
-        this.regions = this.manageRegions.getAllRegions();
+        if (!region) {
+          this.manageRegions.addRegion(res.newRegion);
+          this.regions = this.manageRegions.getAllRegions();
+        } else {
+          const index = this.regions.indexOf(region);
+          this.regions[index] = res.newRegion;
+          this.regions = this.manageRegions.getAllRegions();
+        }
         console.log(this.regions);
       }
     });

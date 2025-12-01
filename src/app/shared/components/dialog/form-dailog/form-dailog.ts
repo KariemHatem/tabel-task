@@ -19,6 +19,13 @@ export class FormDailog {
 
   titleEn: string = '';
 
+  ngOnInit() {
+    const region = this.conf.data?.region;
+    if (region) {
+      this.titleEn = region.title;
+    }
+  }
+
   submit() {
     const newRegion: Region = {
       title: this.titleEn,
