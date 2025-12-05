@@ -39,16 +39,8 @@ export class Tabel {
       videoUrl: 'assets/videos/4-Change the password for my account.webm',
     },
     {
-      title: 'Add unit',
-      videoUrl: 'assets/videos/9-Add unit.webm',
-    },
-    {
       title: 'How to prevent duplicates in the leades',
       videoUrl: 'assets/videos/How to prevent duplicates in the leads.webm',
-    },
-    {
-      title: 'Import Unit',
-      videoUrl: 'assets/videos/Import Unit .mp4',
     },
     {
       title: 'Edit User',

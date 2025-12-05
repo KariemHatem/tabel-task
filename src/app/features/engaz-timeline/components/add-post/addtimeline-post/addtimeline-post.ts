@@ -15,8 +15,8 @@ export class AddtimelinePost {
   // Help Videos
   videos = [
     {
-      title: 'Add unit',
-      videoUrl: 'assets/videos/9-Add unit.webm',
+      title: 'How to disable 2FA',
+      videoUrl: 'assets/videos/How to disable 2FA.webm',
     },
     {
       title: 'How to prevent duplicates in the leades',
